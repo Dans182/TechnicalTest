@@ -1,7 +1,9 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			categories: []
+			categories: [],
+			breeds: [],
+			imagecategories: [],
 		},
 		actions: {
 			getCategories: async () => {
@@ -12,30 +14,39 @@ const getState = ({ getStore, getActions, setStore }) => {
 			body: JSON.stringify(),
 		  });
 		  const dataCategories = await resp.json();
+		  setStore({categories: dataCategories})
 		} catch (e) {
 		  alert("ERROR");
 		}
 	  },
-	  		getCategoriesHats: async () => {
+
+	  		getBreeds: async () => {
 		try {
-		  const resp = await fetch("https://api.thecatapi.com/v1/images/search?category_ids=2", {
+		  const resp = await fetch("https://api.thecatapi.com/v1/breeds", {
 			method: "GET",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(),
 		  });
-		  const dataCategoriesHats = await resp.json();
+		  const dataBreeds = await resp.json();
+		  setStore({breeds: dataBreeds})
 		} catch (e) {
 		  alert("ERROR");
 		}
 	  },
-			changeColor: (index, color) => {
-				const store = getStore();
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-				setStore({ demo: demo });
-			}
+	  		getImageCategories: async (id) => {
+		try {
+		  const resp = await fetch("https://api.thecatapi.com/v1/images/search?category_ids=" + id, {
+			method: "GET",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(),
+		  });
+		  const dataimagecategories = await resp.json();
+		  setStore({imagecategories: dataimagecategories})
+		} catch (e) {
+		  alert("ERROR");
+		}
+	  },
+
 		}
 	};
 };
