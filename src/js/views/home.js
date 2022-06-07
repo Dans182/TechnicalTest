@@ -1,27 +1,11 @@
 import React from "react";
 import { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 import "../../styles/home.css";
 
 export const Home = () => {
 	const { actions, store } = useContext(Context);
-
-	useEffect(() => {
-		getCategories();
-	  }, []);
-
-	const getCategories = async () => {
-		try {
-		  const resp = await fetch("https://api.thecatapi.com/v1/categories", {
-			method: "GET",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(),
-		  });
-		  const dataCategories = await resp.json();
-		} catch (e) {
-		  alert("ERROR");
-		}
-	  };
 
 	  const getCategoriesHats = async () => {
 		try {
@@ -53,18 +37,19 @@ export const Home = () => {
 return(
 	<div className="text-center mt-5">
 		<p>
-			<button
+			<Link to="categories"><button
               className="btn btn-outline-success"
               type="button"
               onClick={() => {
-                getCategories();
+                actions.getCategories();
               }}
             >
               Categories
             </button>
+			</Link>
 		</p>
 		<p>
-			<button
+		<Link to="breeds"><button
               className="btn btn-outline-success"
               type="button"
               onClick={() => {
@@ -73,6 +58,7 @@ return(
             >
               Breeds
             </button>
+			</Link>
 		</p>
 		<p>
 			<button

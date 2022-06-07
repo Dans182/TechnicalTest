@@ -3,13 +3,8 @@ import { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 
-export const Demo = () => {
+export const Breeds = () => {
 	const { actions, store } = useContext(Context);
-
-	useEffect(() => {
-		getCategories();
-	  }, []);
-
 
 	  const getCategoriesHats = async () => {
 		try {
@@ -27,17 +22,6 @@ export const Demo = () => {
 	  
 return(
 	<div className="text-center mt-5">
-		<p>
-			<button
-              className="btn btn-outline-success"
-              type="button"
-              onClick={() => {
-                getBreeds();
-              }}
-            >
-              Breeds
-            </button>
-		</p>
 		<p>
 			<button
               className="btn btn-outline-success"
