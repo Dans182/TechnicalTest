@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			categories: [],
 			breeds: [],
 			imagecategories: [],
+			breedsDescription: [],
 		},
 		actions: {
 			getCategories: async () => {
@@ -46,7 +47,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 		  alert("ERROR");
 		}
 	  },
-
+	 		getBreedsDescription: async (id) => {
+		try {
+		  const resp = await fetch("https://api.thecatapi.com/v1/images/search?breed_ids=" + id, {
+			method: "GET",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(),
+		  });
+		  const databreedsDescription = await resp.json();
+		  setStore({breedsDescription: databreedsDescription})
+		} catch (e) {
+		  alert("ERROR");
+		}
+	  },
+	  		logout: async () => {setStore({categories: [], breeds: [], imagecategories: [], breedsDescription: [],
+        });
+      },
 		}
 	};
 };
