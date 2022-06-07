@@ -1,15 +1,65 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import { useContext, useEffect } from "react";
+import { Context } from "../store/appContext";
 import "../../styles/home.css";
 
-export const Home = () => (
+export const Home = () => {
+	const { actions, store } = useContext(Context);
+
+	useEffect(() => {
+		getCategories();
+	  }, []);
+
+	const getCategories = async () => {
+		try {
+		  const resp = await fetch("https://api.thecatapi.com/v1/categories", {
+			method: "GET",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(),
+		  });
+		  const dataCategories = await resp.json();
+		} catch (e) {
+		  alert("ERROR");
+		}
+	  };
+
+	  const getBreeds = async () => {
+		try {
+		  const resp = await fetch("https://api.thecatapi.com/v1/breeds", {
+			method: "GET",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(),
+		  });
+		  const dataBreeds = await resp.json();
+		} catch (e) {
+		  alert("ERROR");
+		}
+	  };	  
+
+return(
 	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
 		<p>
-			<img src={rigoImage} />
+			<button
+              className="btn btn-outline-success"
+              type="button"
+              onClick={() => {
+                getCategories();
+              }}
+            >
+              Categories
+            </button>
 		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
+		<p>
+			<button
+              className="btn btn-outline-success"
+              type="button"
+              onClick={() => {
+                getBreeds();
+              }}
+            >
+              Breeds
+            </button>
+		</p>
+
 	</div>
-);
+)};
