@@ -26,7 +26,8 @@ export const Categories = () => {
               <div className="box-button">
                 <Link to={"categories/" + e.id}>
                   <button className="breed-button" type="button">
-                    {e.name}
+                    {e.name.charAt(0).toUpperCase()}
+					{e.name.slice(1).toLowerCase()}
                   </button>
                 </Link>
               </div>
