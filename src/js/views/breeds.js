@@ -14,10 +14,8 @@ export const Breeds = () => {
     return(
         <div className="text-center mt-5">
             {store.breeds.map((e)=>{
-            return(<div key={e.id}><Link to={"categories/" + e.id}><button className="btn btn-outline-success"
-            type="button" onClick={() => {
-                actions.getBreedsDescription(e.id)}}
->
+            return(<div key={e.id}><Link to={"breeds/" + e.id}><button className="btn btn-outline-success"
+            type="button">
                 {e.name}
           </button>
                   

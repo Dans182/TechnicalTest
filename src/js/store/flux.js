@@ -39,7 +39,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 		  const resp = await fetch("https://api.thecatapi.com/v1/images/search?category_ids=" + id, {
 			method: "GET",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(),
 		  });
 		  const dataimagecategories = await resp.json();
 		  setStore({imagecategories: dataimagecategories})
@@ -52,7 +51,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 		  const resp = await fetch("https://api.thecatapi.com/v1/images/search?breed_ids=" + id, {
 			method: "GET",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(),
 		  });
 		  const databreedsDescription = await resp.json();
 		  setStore({breedsDescription: databreedsDescription})
