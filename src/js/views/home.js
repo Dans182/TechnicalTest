@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 import "../../styles/home.css";
 
 export const Home = () => {
-
-
-return(
+  return (
     <Fragment>
       <div className="cat-content">
         <img
@@ -19,21 +17,14 @@ return(
         <div className="content-buttons">
           <p>
             <Link to="categories">
-              <button
-                className="buttons"
-                type="button"
-              >
+              <button className="buttons" type="button">
                 Categories
               </button>
             </Link>
-			</p>
+          </p>
           <p>
             <Link to="breeds">
-              <button
-                className="buttons"
-                type="button"
-
-              >
+              <button className="buttons" type="button">
                 Breeds
               </button>
             </Link>
@@ -41,4 +32,5 @@ return(
         </div>
       </div>
     </Fragment>
-)};
+  );
+};
