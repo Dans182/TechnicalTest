@@ -1,28 +1,29 @@
 import React from "react";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, Fragment } from "react";
 import { Context } from "../store/appContext";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import "../../styles/breedsdescription.css";
 
 export const Breedsdescription = () => {
-	const { actions, store } = useContext(Context);
-	let { id } = useParams();
+  const { actions, store } = useContext(Context);
+  let { id } = useParams();
 
-    useEffect(() => {
-        actions.getBreedsDescription(id);
-      }, []);
+  useEffect(() => {
+    actions.getBreedsDescription(id);
+  }, []);
 
-return(
-	
-	<div className="text-center mt-5">
-		{store.breedsDescription.map((e)=>{
-		return(
-        <div key={e.id}>
-        <img src={e.url} style={{"width": "50%", "height": "50%"}}></img>
-        {e.breeds[0].name}
-		</div>)
-		})}
-	</div>)
-	
-}
-
+  return (
+    <Fragment>
+      {store.breedsDescription.map((e) => {
+        return (
+          <div className="content-card-id" key={e.id}>
+            <img className="cat-imagen-header" src={e.url}></img>
+            <div className="description">
+              <h4>{e.breeds[0].name}</h4>
+            </div>
+          </div>
+        );
+      })}
+    </Fragment>
+  );
+};

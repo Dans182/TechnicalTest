@@ -1,0 +1,19 @@
+.content-card-id {
+    align-items: center;
+    background-color: #cacfd2;
+    width: 300px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 40px;
+  }
+  
+  .content-card-id {
+    text-align: center;
+  }
+  
+  .cat-imagen-header {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+  }
