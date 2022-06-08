@@ -18,8 +18,9 @@ export const Breeds = () => {
             type="button">
                 {e.name}
 
+
           </button>
-                  
+          <img src={"https://cdn2.thecatapi.com/images/" + e.reference_image_id + ".jpg"}></img>
     </Link>
             </div>)
             })}
