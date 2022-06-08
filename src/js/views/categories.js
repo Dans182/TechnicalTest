@@ -2,7 +2,7 @@ import React from "react";
 import { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import "../../styles/home.css";
+import "../../styles/categories.css";
 
 export const Categories = () => {
 	const { actions, store } = useContext(Context);
