@@ -12,7 +12,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 		  const resp = await fetch("https://api.thecatapi.com/v1/categories", {
 			method: "GET",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(),
 		  });
 		  const dataCategories = await resp.json();
 		  setStore({categories: dataCategories})
@@ -26,7 +25,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 		  const resp = await fetch("https://api.thecatapi.com/v1/breeds", {
 			method: "GET",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(),
 		  });
 		  const dataBreeds = await resp.json();
 		  setStore({breeds: dataBreeds})

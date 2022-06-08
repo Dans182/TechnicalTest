@@ -13,9 +13,6 @@ return(
 			<Link to="categories"><button
               className="btn btn-outline-success"
               type="button"
-              onClick={() => {
-                actions.getCategories();
-              }}
             >
               Categories
             </button>
@@ -25,9 +22,6 @@ return(
 		<Link to="breeds"><button
               className="btn btn-outline-success"
               type="button"
-              onClick={() => {
-                actions.getBreeds();
-              }}
             >
               Breeds
             </button>

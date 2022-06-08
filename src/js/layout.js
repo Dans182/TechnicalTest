@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Categories } from "./views/categories";
 import { Breeds } from "./views/breeds";
@@ -16,7 +15,6 @@ const Layout = () => {
 	return (
 		<div>
 			<BrowserRouter basename={basename}>
-				<ScrollToTop>
 					<Navbar />
 					<Switch>
 						<Route exact path="/">
@@ -39,7 +37,6 @@ const Layout = () => {
 						</Route>
 					</Switch>
 					<Footer />
-				</ScrollToTop>
 			</BrowserRouter>
 		</div>
 	);
