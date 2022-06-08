@@ -18,14 +18,22 @@ export const Breedsdescription = () => {
         return (
           <div className="content-card-id" key={e.id}>
             <img className="cat-imagen-header" src={e.url}></img>
-            <div className="description">
-              <h1>{e.breeds[0].name}</h1>
+            <div>
+              <h1 className="title-description">{e.breeds[0].name}</h1>
             </div>
-			<div className="description">
-              <h2>Origin: {e.breeds[0].origin}</h2>
-			  <h3>Life Span: {e.breeds[0].life_span} years</h3>
-			  <h4>Temperament: {e.breeds[0].temperament} years</h4>
-			  <h5>Life Span: {e.breeds[0].description} years</h5>
+            <div className="subtitle-description">
+              <h4 className="subtitle-description">
+                Origin: {e.breeds[0].origin}
+              </h4>
+              <h4 className="subtitle-description">
+                Life Span: {e.breeds[0].life_span} years
+              </h4>
+              <h4 className="subtitle-description">
+                Temperament: {e.breeds[0].temperament}.
+              </h4>
+              <h4 className="subtitle-description">
+                Description: {e.breeds[0].description}
+              </h4>
             </div>
           </div>
         );

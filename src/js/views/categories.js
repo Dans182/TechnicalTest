@@ -16,7 +16,7 @@ export const Categories = () => {
       <div className="breed">
         {store.categories.map((e) => {
           return (
-            <div className="content-card" key={e.id}>
+            <div className="content-card-categories" key={e.id}>
               <div>
                 <img
                   className="cat-imagen-header"
@@ -27,7 +27,7 @@ export const Categories = () => {
                 <Link to={"categories/" + e.id}>
                   <button className="breed-button" type="button">
                     {e.name.charAt(0).toUpperCase()}
-					{e.name.slice(1).toLowerCase()}
+                    {e.name.slice(1).toLowerCase()}
                   </button>
                 </Link>
               </div>

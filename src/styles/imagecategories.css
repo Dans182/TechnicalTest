@@ -1,21 +1,23 @@
-.cat-content {
-    margin-top: 40px;
-    max-width: 400px;
-    border-radius: 10px;
-    background-color: #eaeded;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .cat-img {
-    max-width: 100%;
-    border-radius: 10px 10px 0 0;
-  }
-  
-  .title {
-    text-align: center;
-    margin: auto;
-    margin: 10px;
-    font-size: 17px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  }
+.cat-content-imagecategories {
+  margin-top: 40px;
+  max-width: 400px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1de0f9;
+}
+
+.cat-img {
+  max-width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.title {
+  text-align: center;
+  margin: auto;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #054677;
+  font-weight: 600;
+  padding: 8px;
+}
