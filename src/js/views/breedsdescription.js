@@ -2,7 +2,7 @@ import React from "react";
 import { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useParams } from 'react-router-dom';
-import "../../styles/home.css";
+import "../../styles/breedsdescription.css";
 
 export const Breedsdescription = () => {
 	const { actions, store } = useContext(Context);
@@ -13,6 +13,7 @@ export const Breedsdescription = () => {
       }, []);
 
 return(
+	
 	<div className="text-center mt-5">
 		{store.breedsDescription.map((e)=>{
 		return(
@@ -21,4 +22,7 @@ return(
         {e.breeds[0].name}
 		</div>)
 		})}
-	</div>)}
+	</div>)
+	
+}
+
