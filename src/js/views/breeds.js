@@ -20,7 +20,7 @@ export const Breeds = () => {
               <div>
                 <img
                   className="cat-imagen-header"
-                  src="https://images.pexels.com/photos/2173872/pexels-photo-2173872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  src={e.image ? e.image.url : "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"}
                 ></img>
               </div>
               <div className="box-button">
