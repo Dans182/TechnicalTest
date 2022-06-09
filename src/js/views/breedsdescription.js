@@ -17,7 +17,8 @@ export const Breedsdescription = () => {
       {store.breedsDescription.breeds ? (
         <div className="padre">
           <div className="pagination">
-            <button className="pagination-button"
+            <button
+              className="pagination-button"
               onClick={() => {
                 actions.previousCat(store.breedsDescription.breeds[0].id);
               }}
@@ -51,7 +52,8 @@ export const Breedsdescription = () => {
             </div>
           </div>
           <div className="pagination">
-            <button className="pagination-button"
+            <button
+              className="pagination-button"
               onClick={() => {
                 actions.nextCat(store.breedsDescription.breeds[0].id);
               }}

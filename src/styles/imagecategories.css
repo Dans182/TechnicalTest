@@ -28,7 +28,7 @@
   padding: 8px;
 }
 
-@media (max-width: 780px)  {
+@media (max-width: 780px) {
   .cat-content-imagecategories {
     margin-top: 40px;
     max-width: 300px;
@@ -48,5 +48,4 @@
     overflow: hidden;
     border-radius: 10px 10px 0 0;
   }
-
 }
