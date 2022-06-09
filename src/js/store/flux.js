@@ -3,7 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       categories: [],
       breeds: [],
-      imagecategories: [],
+      imageCategories: [],
       breedsDescription: {},
     },
     actions: {
@@ -41,8 +41,8 @@ const getState = ({ getStore, getActions, setStore }) => {
               headers: { "Content-Type": "application/json" },
             }
           );
-          const dataimagecategories = await resp.json();
-          setStore({ imagecategories: dataimagecategories });
+          const dataImageCategories = await resp.json();
+          setStore({ imageCategories: dataImageCategories });
         } catch (e) {
           alert("ERROR");
         }
@@ -56,8 +56,8 @@ const getState = ({ getStore, getActions, setStore }) => {
               headers: { "Content-Type": "application/json" },
             }
           );
-          const databreedsDescription = await resp.json();
-          setStore({ breedsDescription: databreedsDescription[0] });
+          const dataBreedsDescription = await resp.json();
+          setStore({ breedsDescription: dataBreedsDescription[0] });
         } catch (e) {
           alert("ERROR");
         }
@@ -66,14 +66,23 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({
           categories: [],
           breeds: [],
-          imagecategories: [],
+          imageCategories: [],
           breedsDescription: {},
         });
+      },
+      previousCat: (currentId) => {
+        let breeds = getStore().breeds;
+        for (let i = 0; i < breeds.length; i++) {
+          if (breeds[i].id == currentId && i < breeds.length) {
+            getActions().getBreedsDescription(breeds[i - 1].id);
+          } else if (breeds[i] == currentId && i == breeds.length) {
+            getActions().getBreedsDescription(breeds[0].id);
+          }
+        }
       },
       nextCat: (currentId) => {
         let breeds = getStore().breeds;
         for (let i = 0; i < breeds.length; i++) {
-          console.log(i);
           if (breeds[i].id == currentId && i < breeds.length) {
             getActions().getBreedsDescription(breeds[i + 1].id);
           } else if (breeds[i] == currentId && i == breeds.length) {

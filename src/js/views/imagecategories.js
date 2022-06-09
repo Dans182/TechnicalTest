@@ -15,7 +15,7 @@ export const Imagecategories = () => {
   return (
     <Fragment>
       <div className="cat-content-imagecategories">
-        {store.imagecategories.map((e) => {
+        {store.imageCategories.map((e) => {
           return (
             <div key={e.id}>
               <img className="cat-img" src={e.url}></img>
