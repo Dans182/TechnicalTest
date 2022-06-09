@@ -19,8 +19,12 @@ export const Breeds = () => {
             <div className="content-card" key={e.id}>
               <div>
                 <img
-                  className="cat-imagen-header"
-                  src={e.image ? e.image.url : "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"}
+                  className="cat-image-breed"
+                  src={
+                    e.image
+                      ? e.image.url
+                      : "https://images.pexels.com/photos/2173872/pexels-photo-2173872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  }
                 ></img>
               </div>
               <div className="box-button">

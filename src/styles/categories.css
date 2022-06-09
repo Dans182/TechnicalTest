@@ -1,4 +1,4 @@
-.content-card-categories {
+.categories-box {
   align-items: center;
   background-color: #1de0f9;
   width: 300px;
@@ -66,3 +66,11 @@
   font-size: 16px;
   margin-left: 10px;
 }
+
+@media (max-width: 780px){
+  .categories-div {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 80px;
+}}
