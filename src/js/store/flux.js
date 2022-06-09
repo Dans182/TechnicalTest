@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       categories: [],
       breeds: [],
       imagecategories: [],
-      breedsDescription: [],
+      breedsDescription: {},
     },
     actions: {
       getCategories: async () => {
@@ -57,7 +57,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             }
           );
           const databreedsDescription = await resp.json();
-          setStore({ breedsDescription: databreedsDescription });
+          setStore({ breedsDescription: databreedsDescription[0] });
         } catch (e) {
           alert("ERROR");
         }
@@ -67,8 +67,19 @@ const getState = ({ getStore, getActions, setStore }) => {
           categories: [],
           breeds: [],
           imagecategories: [],
-          breedsDescription: [],
+          breedsDescription: {},
         });
+      },
+      nextCat: (currentId) => {
+        let breeds = getStore().breeds;
+        for (let i = 0; i < breeds.length; i++) {
+          console.log(i);
+          if (breeds[i].id == currentId && i < breeds.length) {
+            getActions().getBreedsDescription(breeds[i + 1].id);
+          } else if (breeds[i] == currentId && i == breeds.length) {
+            getActions().getBreedsDescription(breeds[0].id);
+          }
+        }
       },
     },
   };

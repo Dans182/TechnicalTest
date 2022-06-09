@@ -13,10 +13,10 @@ export const Categories = () => {
 
   return (
     <Fragment>
-      <div className="breed">
+      <div className="breed categories-div">
         {store.categories.map((e) => {
           return (
-            <div className="content-card-categories" key={e.id}>
+            <div className="categories-box" key={e.id}>
               <div>
                 <img
                   className="cat-imagen-header"
