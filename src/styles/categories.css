@@ -67,10 +67,3 @@
   margin-left: 10px;
 }
 
-@media (max-width: 780px){
-  .categories-div {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  padding-top: 80px;
-}}

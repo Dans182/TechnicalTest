@@ -91,7 +91,7 @@ body {
   .breed {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 70%;
     padding-top: 80px;
   }
 
